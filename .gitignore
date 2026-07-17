@@ -1,27 +1,25 @@
-# Python environment
 .venv/
 __pycache__/
 *.pyc
 
-# Jupyter
-.ipynb_checkpoints/
+data/raw/
+data/interim/
+data/processed/
 
-# Environment variables and credentials
-.env
-*.env
-
-# Operating system files
-.DS_Store
-Thumbs.db
-
-# Databases generated locally
 *.db
 *.sqlite
 *.sqlite3
 
-# Temporary files
-data/interim/*
-!data/interim/.gitkeep
+.vscode/
+.idea/
 
-# Game 5 holdout data
-data/holdout/*
+@"
+
+BUILD_COMMANDS.txt
+requirements_review.txt
+docs/REVIEW_LAYER_SETUP.md
+reports/*.docx
+reports/pregame_observation_template.md
+/Spurs_Game5_Bench_Card.pdf
+/Spurs_Game5_Coach_Gameplan.pdf
+"@ | Add-Content .gitignore
