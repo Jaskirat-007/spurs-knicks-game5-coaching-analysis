@@ -1,0 +1,27 @@
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables and credentials
+.env
+*.env
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Databases generated locally
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+data/interim/*
+!data/interim/.gitkeep
+
+# Game 5 holdout data
+data/holdout/*

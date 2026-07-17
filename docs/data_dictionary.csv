@@ -1,0 +1,25 @@
+variable,meaning,source,calculation,is_derived,table_name,data_type
+ORTG,Points scored per 100 possessions,NBA API box score advanced,Provided by API or points / possessions * 100,1,team_game_stats,REAL
+DRTG,Points allowed per 100 possessions,NBA API box score advanced,Provided by API or opponent points / possessions * 100,1,team_game_stats,REAL
+NET_RATING,Offensive rating minus defensive rating,NBA API box score advanced,ORTG - DRTG,1,team_game_stats,REAL
+PACE,Estimated possessions per 48 minutes,NBA API box score advanced,Provided by API,0,team_game_stats,REAL
+EFG_PCT,Effective field-goal percentage,NBA API box score traditional,(FGM + 0.5 * FG3M) / FGA,1,team_game_stats,REAL
+TOV_PCT,Turnovers per estimated possessions,NBA API box score advanced,Provided by API where available,1,team_game_stats,REAL
+OREB_PCT,Share of available offensive rebounds recovered,NBA API box score advanced,Provided by API where available,1,team_game_stats,REAL
+FTA_RATE,Free-throw attempts per field-goal attempt,NBA API box score traditional,FTA / FGA,1,team_game_stats,REAL
+THREE_PA_RATE,Three-point attempts per field-goal attempt,NBA API box score traditional,FG3A / FGA,1,team_game_stats,REAL
+RIM_FREQUENCY,Rim attempts divided by total field-goal attempts,NBA API shot chart,Restricted area FGA / total FGA,1,shots,REAL
+LINEUP_NET_RATING,Lineup offensive rating minus defensive rating,NBA API lineup endpoint,OFF_RATING - DEF_RATING,1,lineups,REAL
+IS_PREGAME,Record is available through Game 4 before Game 5,Derived project field,game_date < game5_date,1,games,INTEGER
+IS_HOLDOUT,Record belongs to Game 5 validation sample,Derived project field,game_date = game5_date,1,games,INTEGER
+GAME_ID,Unique identifier assigned to each NBA game,NBA API,Directly sourced game identifier,0,games; team_game_stats; player_game_stats; shots; play_by_play; lineups,TEXT
+TEAM_ID,Unique identifier assigned to each NBA team,NBA API,Directly sourced team identifier,0,teams; players; games; team_game_stats; player_game_stats; shots; play_by_play; lineups,INTEGER
+PLAYER_ID,Unique identifier assigned to each NBA player,NBA API,Directly sourced player identifier,0,players; player_game_stats; shots; play_by_play; lineup_players,INTEGER
+POSS_EST,Estimated number of team possessions,Derived from traditional box-score statistics,FGA + 0.44 * FTA - OREB + TOV,1,team_game_stats,REAL
+SHOT_ZONE,Standardized shot-location category,NBA API shot chart,"Standardized from shot-zone basic, area, and range fields",1,shots,TEXT
+PERIOD,Regulation quarter or overtime period,NBA API,Directly sourced period number,0,shots; play_by_play; lineups,INTEGER
+SECONDS_REMAINING,Number of seconds remaining in the period,Derived from game-clock fields,minutes_remaining * 60 + seconds_remaining,1,shots; play_by_play; lineups,INTEGER
+LINEUP_ID,Unique identifier for a five-player lineup or lineup stint,Derived project field,"Created from team ID, sorted player IDs, and applicable game or stint context",1,lineups; lineup_players,TEXT
+SERIES_GAME_NUMBER,Game number within the NBA Finals series,Verified NBA Finals schedule,Assigned from the verified series schedule,1,games,INTEGER
+DATA_RETRIEVAL_DATE,Date on which the source data was downloaded,Project metadata,Recorded automatically during data collection,1,data_collection_log,TEXT
+IS_DERIVED,"Indicator showing whether a variable was calculated, standardized, or added by the project",Project metadata,"1 means derived, transformed, or project-added; 0 means directly sourced",1,data_dictionary,INTEGER

@@ -1,0 +1,33 @@
+sample_name,team,shot_zone,attempts,makes,fg_pct,attempt_frequency_pct,average_distance
+Regular Season H2H,NYK,Rim,44,31,70.5,22.8,0.6
+Regular Season H2H,NYK,Short Midrange,24,10,41.7,12.4,8.4
+Regular Season H2H,NYK,Long Midrange,25,9,36.0,13.0,15.4
+Regular Season H2H,NYK,Three-Point,100,39,39.0,51.8,24.6
+Regular Season H2H,SAS,Rim,56,37,66.1,33.7,0.9
+Regular Season H2H,SAS,Short Midrange,20,7,35.0,12.0,8.7
+Regular Season H2H,SAS,Long Midrange,18,9,50.0,10.8,16.1
+Regular Season H2H,SAS,Three-Point,72,23,31.9,43.4,24.9
+NBA Cup Final,NYK,Rim,35,19,54.3,33.3,1.7
+NBA Cup Final,NYK,Short Midrange,23,13,56.5,21.9,9.7
+NBA Cup Final,NYK,Long Midrange,11,4,36.4,10.5,15.4
+NBA Cup Final,NYK,Three-Point,36,13,36.1,34.3,26.4
+NBA Cup Final,SAS,Rim,38,21,55.3,38.4,1.6
+NBA Cup Final,SAS,Short Midrange,13,1,7.7,13.1,8.8
+NBA Cup Final,SAS,Long Midrange,11,5,45.5,11.1,17.6
+NBA Cup Final,SAS,Three-Point,37,14,37.8,37.4,26.5
+Finals Games 1-4,NYK,Rim,99,62,62.6,28.4,1.3
+Finals Games 1-4,NYK,Short Midrange,56,22,39.3,16.0,7.8
+Finals Games 1-4,NYK,Long Midrange,51,14,27.5,14.6,14.5
+Finals Games 1-4,NYK,Three-Point,143,54,37.8,41.0,24.3
+Finals Games 1-4,SAS,Rim,109,65,59.6,32.3,1.2
+Finals Games 1-4,SAS,Short Midrange,52,16,30.8,15.4,7.1
+Finals Games 1-4,SAS,Long Midrange,27,12,44.4,8.0,15.5
+Finals Games 1-4,SAS,Three-Point,149,51,34.2,44.2,24.7
+All Pregame Matchups,NYK,Rim,178,112,62.9,27.5,1.2
+All Pregame Matchups,NYK,Short Midrange,103,45,43.7,15.9,8.3
+All Pregame Matchups,NYK,Long Midrange,87,27,31.0,13.4,14.9
+All Pregame Matchups,NYK,Three-Point,279,106,38.0,43.1,24.7
+All Pregame Matchups,SAS,Rim,203,123,60.6,33.7,1.2
+All Pregame Matchups,SAS,Short Midrange,85,24,28.2,14.1,7.7
+All Pregame Matchups,SAS,Long Midrange,56,26,46.4,9.3,16.1
+All Pregame Matchups,SAS,Three-Point,258,88,34.1,42.9,25.0
