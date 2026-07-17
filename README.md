@@ -1,155 +1,233 @@
-﻿# Spursâ€“Knicks Game 5 Coaching Analysis
+# Spurs–Knicks Game 5 Coaching Analysis
 
 An out-of-sample NBA coaching analytics project using Python, SQL, SQLite, play-by-play, shot, lineup, and rotation data to build a San Antonio Spurs Game 5 scouting report against the New York Knicks.
 
+---
+
 ## Project Question
 
-Based only on information available through Game 4 of the 2026 NBA Finals, what offensive, defensive, lineup, and rotation adjustments should San Antonio prioritize for Game 5 while trailing the series 3â€“1?
+Based only on information available through Game 4 of the 2026 NBA Finals, what offensive, defensive, lineup, and rotation adjustments should San Antonio prioritize for Game 5 while trailing the series 3–1?
+
+---
 
 ## Why This Project Matters
 
-The goal is not to describe what already happened. It is to simulate the work of a coaching analyst preparing an elimination-game plan:
+The objective is not to explain what happened after the fact. Instead, this project simulates the workflow of an NBA coaching analyst preparing an elimination-game scouting report.
 
-- isolate repeatable opponent and team tendencies;
-- distinguish evidence from basketball interpretation;
-- identify counter-evidence;
-- translate findings into coach-facing priorities;
-- define measurable in-game adjustment triggers;
-- reserve Game 5 as an out-of-sample holdout.
+The analysis aims to:
+
+- Identify repeatable opponent and team tendencies.
+- Separate evidence from basketball interpretation.
+- Highlight counter-evidence rather than cherry-picking results.
+- Translate findings into coach-facing recommendations.
+- Define measurable in-game adjustment triggers.
+- Reserve Game 5 as an out-of-sample holdout evaluation.
+
+---
 
 ## Anti-Hindsight Methodology
 
-All pregame analysis and recommendations were created using data available through Finals Game 4.
+All scouting reports, recommendations, and visualizations were produced **using only data available through Game 4**.
 
-Game 5 is excluded from the scouting analysis and reserved for a later holdout evaluation. The pregame report is frozen before the holdout is opened.
+Game 5 was intentionally withheld during analysis and reserved as an independent evaluation of the recommendations.
+
+---
 
 ## Analytical Framework
 
-The project is organized around two North Stars:
+The project is organized around two coaching "North Stars":
 
-1. **Possession quality** â€” rim pressure, corner threes, free throws, turnovers, and final shot location.
-2. **Rotation stability** â€” performance of the starting group, Wembanyama minutes, non-Wembanyama stretches, and recurring five-player combinations.
+### 1. Possession Quality
 
-Supporting analysis covers:
+- Rim pressure
+- Corner three generation
+- Free-throw creation
+- Turnovers
+- Shot location
 
-- team identity across regular season, pre-Finals playoffs, last 10 games, and Finals Games 1â€“4;
-- Four Factors and game-by-game team performance;
-- player workload and efficiency;
-- shot geography;
-- lineup and rotation performance;
-- quarter-level game flow;
-- unanswered scoring runs;
-- timeout and substitution context.
+### 2. Rotation Stability
+
+- Starting lineup performance
+- Wembanyama on/off impact
+- Non-Wembanyama minutes
+- Five-player lineup combinations
+
+Supporting analyses include:
+
+- Team performance across the regular season, playoffs, and Finals
+- Four Factors
+- Player efficiency
+- Shot geography
+- Lineup performance
+- Rotation patterns
+- Quarter-by-quarter game flow
+- Scoring runs
+- Timeout and substitution context
+
+---
 
 ## Pregame Verdict
 
-San Antonio did not need a completely new identity. It needed to preserve the structure that already produced dominant first quarters, positive starting-lineup minutes, and positive Wembanyama minutes.
+The analysis concluded that San Antonio **did not require a completely new identity**.
 
-The coach gameplan prioritizes:
+Instead, the Spurs needed to preserve the structure that had already produced:
 
-- matching Wembanyama's minutes to Karl-Anthony Towns;
-- limiting extended Foxâ€“Castleâ€“Harper overlap;
-- converting paint pressure into more corner threes;
-- using Fox as an advantage creator;
-- protecting the rim and corners without overreacting to difficult Brunson makes;
-- shortening vulnerable non-Wembanyama stretches;
-- using predetermined responses to scoring runs and fourth-quarter turnovers.
+- Dominant first quarters
+- Positive starting-lineup minutes
+- Positive Wembanyama minutes
+
+Recommended Game 5 priorities:
+
+- Match Wembanyama's minutes with Karl-Anthony Towns.
+- Reduce extended Fox–Castle–Harper combinations.
+- Convert paint pressure into more corner threes.
+- Use Fox primarily as an advantage creator.
+- Protect the rim and corners without overreacting to difficult Brunson shot-making.
+- Shorten vulnerable non-Wembanyama stretches.
+- Use predefined responses to scoring runs and fourth-quarter turnovers.
+
+---
 
 ## Coach-Facing Deliverables
 
-- [Full Game 5 Coach Gameplan](reports/Spurs_Game5_Coach_Gameplan.pdf)
-- [One-Page Game 5 Bench Card](reports/Spurs_Game5_Bench_Card.pdf)
-- Interactive Streamlit review dashboard
-- Analysis-ready CSV outputs
-- Reproducible Python and SQL pipeline
+- Full Game 5 Coach Gameplan
+- One-Page Game 5 Bench Card
+- Streamlit review dashboard
+- Analysis-ready CSV exports
+- Reproducible Python + SQL pipeline
 
-## Project Structure
+---
+
+## Repository Structure
 
 ```text
 spurs-knicks-game5-coaching-analysis/
-â”œâ”€â”€ README.md
-â”œâ”€â”€ requirements.txt
-â”œâ”€â”€ .gitignore
-â”œâ”€â”€ LICENSE
-â”œâ”€â”€ src/
-â”‚   â”œâ”€â”€ config.py
-â”‚   â”œâ”€â”€ init_db.py
-â”‚   â”œâ”€â”€ collect_data.py
-â”‚   â”œâ”€â”€ validate_data.py
-â”‚   â”œâ”€â”€ clean_data.py
-â”‚   â”œâ”€â”€ load_data.py
-â”‚   â”œâ”€â”€ collect_analysis_data.py
-â”‚   â”œâ”€â”€ validate_analysis_data.py
-â”‚   â”œâ”€â”€ clean_analysis_data.py
-â”‚   â”œâ”€â”€ load_analysis_data.py
-â”‚   â”œâ”€â”€ export_analysis_outputs.py
-â”‚   â”œâ”€â”€ validate_review_outputs.py
-â”‚   â”œâ”€â”€ run_full_pipeline.py
-â”‚   â”œâ”€â”€ run_review_build.py
-â”‚   â””â”€â”€ review_dashboard.py
-â”œâ”€â”€ sql/
-â”œâ”€â”€ docs/
-â”‚   â”œâ”€â”€ SETUP.md
-â”‚   â”œâ”€â”€ analysis_guide.md
-â”‚   â”œâ”€â”€ data_dictionary.csv
-â”‚   â””â”€â”€ methodology.md
-â”œâ”€â”€ data/
-â”‚   â””â”€â”€ analysis_outputs/
-â”œâ”€â”€ visuals/
-â””â”€â”€ reports/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+│
+├── src/
+│   ├── config.py
+│   ├── init_db.py
+│   ├── collect_data.py
+│   ├── validate_data.py
+│   ├── clean_data.py
+│   ├── load_data.py
+│   ├── collect_analysis_data.py
+│   ├── validate_analysis_data.py
+│   ├── clean_analysis_data.py
+│   ├── load_analysis_data.py
+│   ├── export_analysis_outputs.py
+│   ├── validate_review_outputs.py
+│   ├── run_full_pipeline.py
+│   ├── run_review_build.py
+│   └── review_dashboard.py
+│
+├── sql/
+├── docs/
+├── data/
+│   └── analysis_outputs/
+├── visuals/
+└── reports/
 ```
+
+---
 
 ## Data Quality Decisions
 
-Two NBA feed behaviors required explicit handling:
+Two NBA data-feed behaviors required explicit handling.
 
-- `actionNumber` is not unique for every play-by-play row. Linked events can share an action number, so validation uses `actionId` when available and falls back to a composite event-row check.
-- `team_id = 0` represents an event not assigned to a real team. These values are converted to `NULL` before SQLite insertion to preserve referential integrity.
+### Play-by-play uniqueness
 
-The review outputs were also validated for:
+`actionNumber` is not always unique because linked events can share the same value.
 
-- Game 5 exclusion;
-- unique team-game and event records;
-- valid quarter totals;
-- valid scoring-run score changes;
-- complete rotation score context;
-- consistent player turnover-percentage scaling;
-- lineup net-rating arithmetic;
-- shot-frequency totals.
+Validation therefore:
 
-## Run the Project
+- Uses `actionId` whenever available.
+- Falls back to a composite event check only if necessary.
 
-See [docs/SETUP.md](docs/SETUP.md) for the complete build instructions.
+### SQLite foreign keys
 
-Quick rerun using existing raw data:
+Certain NBA events contain:
 
-```powershell
+```
+team_id = 0
+```
+
+These rows represent events not assigned to either team.
+
+Before loading into SQLite:
+
+```
+team_id = NULL
+```
+
+This preserves referential integrity.
+
+Additional validation confirms:
+
+- Game 5 exclusion
+- Unique game records
+- Quarter totals
+- Scoring-run calculations
+- Rotation context
+- Turnover percentage scaling
+- Lineup net-rating calculations
+- Shot-frequency totals
+
+---
+
+## Running the Project
+
+See **docs/SETUP.md** for the complete build process.
+
+Quick rerun using previously collected data:
+
+```bash
 python src/run_full_pipeline.py --skip-collection
 python src/run_review_build.py
 streamlit run src/review_dashboard.py
 ```
 
+---
+
 ## Analysis Outputs
 
-See [docs/analysis_guide.md](docs/analysis_guide.md) for descriptions of the exported CSV files.
+Descriptions for every exported dataset are available in:
+
+```
+docs/analysis_guide.md
+```
+
+---
 
 ## Limitations
 
-- The Finals sample contains only four pregame games.
-- Public data cannot identify every defensive coverage or offensive action with film-level certainty.
-- Lineup ratings are contextual and can be noisy in small samples.
-- Plus-minus and on/off results are used as directional evidence, not individual causal proof.
-- Exact scheme recommendations require film validation.
+- Finals sample contains only four pregame games.
+- Public play-by-play data cannot perfectly identify every offensive or defensive action.
+- Lineup ratings become noisy with small samples.
+- Plus-minus and on/off metrics are directional evidence rather than causal proof.
+- Final tactical recommendations should always be validated with film.
+
+---
 
 ## Project Status
 
-**Pregame phase:** Complete and frozen  
-**Game 5 holdout evaluation:** Pending  
-**Final long-form case study:** Pending holdout evaluation
+| Stage | Status |
+|-------|--------|
+| Pregame Scouting Analysis | Complete |
+| Game 5 Holdout Evaluation | Pending |
+| Final Case Study | Pending |
+
+---
 
 ## Author
 
-**Jaskirat Singh**  
-B.S. Computer Science, Arizona State University  
-Basketball analytics, scouting, and decision support
+**Jaskirat Singh**
 
+B.S. Computer Science  
+Arizona State University
+
+Basketball Analytics • Scouting • Coaching Decision Support
